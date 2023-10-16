@@ -14,10 +14,11 @@ import {
   View,
 } from 'react-native';
 import {Provider as PaperAlberto} from 'react-native-paper';
+import { text } from 'stream/consumers';
 
-const Nom = () => {
+const Nom = (textAMostrar) => {
   return (
-    <Text style={styles.sectionTitle}>Alberto Aracil Millan</Text>
+    <Text style={styles.sectionTitle}>{textAMostrar}</Text>
   );
 }
 
@@ -26,7 +27,7 @@ const App = () =>  {
   return (
     <PaperAlberto>
       <StatusBar />
-      {Nom()}
+      {Nom("Alberto Aracil Millan")}
     </PaperAlberto>
   );
 }
