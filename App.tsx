@@ -7,22 +7,27 @@
 
 import React from 'react';
 import {
+  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
   View,
-
 } from 'react-native';
+import {Provider as PaperAlberto} from 'react-native-paper';
 
-
-
+const Nom = () => {
+  return (
+    <Text style={styles.sectionTitle}>Alberto Aracil Millan</Text>
+  );
+}
 
 const App = () =>  {
+  
   return (
-    <View>
+    <PaperAlberto>
       <StatusBar />
-      <Text style={styles.sectionTitle}>Benvingut alumne de 2 DAM</Text>
-    </View>
+      {Nom()}
+    </PaperAlberto>
   );
 }
 
@@ -35,7 +40,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 25,
     fontWeight: '600',
-    color : 'white'
+    color : 'black'
   },
   sectionDescription: {
     marginTop: 8,
