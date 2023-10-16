@@ -22,11 +22,12 @@ const Nom = (textAMostrar, estil) => {
   );
 }
 
-const Dades = () => {
-return (
-  <TextInput placeholder='Introduce algo'></TextInput>
-);
+const Dades = (element) => {
+  return element.map(elemento => (
+    <TextInput placeholder={elemento}></TextInput>
+  ));
 }
+
 
 const App = () =>  {
   
@@ -34,7 +35,7 @@ const App = () =>  {
     <PaperAlberto>
       <StatusBar />
       {Nom("Alberto Aracil Millan", "italic")}
-      {Dades()}
+      {Dades(['Email', 'Nom', 'Edad'])}
     </PaperAlberto>
   );
 }
