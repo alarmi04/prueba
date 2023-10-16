@@ -16,9 +16,9 @@ import {
 import {Provider as PaperAlberto} from 'react-native-paper';
 import { text } from 'stream/consumers';
 
-const Nom = (textAMostrar) => {
+const Nom = (textAMostrar, estil) => {
   return (
-    <Text style={styles.sectionTitle}>{textAMostrar}</Text>
+    <Text style={{fontStyle : estil}}>{textAMostrar}</Text>
   );
 }
 
@@ -27,7 +27,7 @@ const App = () =>  {
   return (
     <PaperAlberto>
       <StatusBar />
-      {Nom("Alberto Aracil Millan")}
+      {Nom("Alberto Aracil Millan", "italic")}
     </PaperAlberto>
   );
 }
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   sectionDescription: {
     marginTop: 8,
     fontSize: 18,
-    fontWeight: '400',
+    fontWeight: '400'
   },
   highlight: {
     fontWeight: '700',
