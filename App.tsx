@@ -16,21 +16,31 @@ import {
 import {Provider as PaperAlberto, TextInput} from 'react-native-paper';
 import { text } from 'stream/consumers';
 
+
+
 const Nom = (textAMostrar, estil) => {
   return (
     <Text style={{fontStyle : estil}}>{textAMostrar}</Text>
   );
 }
 
+  
+const estil = 'florida';
+
 const Dades = (element) => {
   return element.map(elemento => (
-    <TextInput placeholder={elemento}></TextInput>
+    <TextInput 
+    placeholder={elemento}
+    style={estil === 'florida' ? styles.florida : styles.upv}
+    >
+    </TextInput>
   ));
 }
 
 
 const App = () =>  {
-  
+
+
   return (
     <PaperAlberto>
       <StatusBar />
@@ -65,7 +75,24 @@ input: {
 },
 button: {
   borderRadius: 5
-}
+},
+upv:{
+  backgroundColor: 'purple',
+  fontSize: 10,
+  fontWeight: '600',
+  padding: 4,
+  paddingLeft: 12,
+  textAlign: 'left',
+  color: 'grey',
+  },
+  florida: {
+  backgroundColor: 'red',
+  fontSize: 12,
+  fontWeight: '600',
+  padding: 4,
+  paddingRight: 12,
+  textAlign: 'right',
+  },
 });
 
 export default App;
