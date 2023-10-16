@@ -32,6 +32,7 @@ const Dades = (element) => {
     <TextInput 
     placeholder={elemento}
     style={estil === 'florida' ? styles.florida : styles.upv}
+    placeholderTextColor={estil === 'florida' ? 'white' : 'orange'}
     >
     </TextInput>
   ));
