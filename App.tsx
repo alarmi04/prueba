@@ -13,7 +13,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import {Provider as PaperAlberto} from 'react-native-paper';
+import {Provider as PaperAlberto, TextInput} from 'react-native-paper';
 import { text } from 'stream/consumers';
 
 const Nom = (textAMostrar, estil) => {
@@ -22,12 +22,19 @@ const Nom = (textAMostrar, estil) => {
   );
 }
 
+const Dades = () => {
+return (
+  <TextInput placeholder='Introduce algo'></TextInput>
+);
+}
+
 const App = () =>  {
   
   return (
     <PaperAlberto>
       <StatusBar />
       {Nom("Alberto Aracil Millan", "italic")}
+      {Dades()}
     </PaperAlberto>
   );
 }
