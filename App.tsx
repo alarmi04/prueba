@@ -3,87 +3,65 @@
  * https://github.com/facebook/react-native
  *
  * @format
+ * @flow strict-local
  */
 
 import React from 'react';
-import {
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Image,
-  Dimensions
-} from 'react-native';
-import { Button, Chip, Surface, Switch } from 'react-native-paper';
+import {StyleSheet, View, Text} from 'react-native';
 
-
-
-const App = () =>  {
-  const [isSwitchOn, setIsSwitchOn] = React.useState(false);
-
-  const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
-
+const App = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <ScrollView>
-      <StatusBar/>
-      <Image style={{width: Dimensions.get('window').width, height: 250}} source={require('./assets/elnano.jpg')} ></Image>
-      <Text>{'\n'}</Text>
-      <Text style={styles.sectionTitle}>TextInput (email)</Text>
-      <TextInput placeholder="Email" style={styles.input} keyboardType='email-address'></TextInput>
-      <Text>{'\n'}</Text>
-      <Text style={styles.sectionTitle}>Button (amb text i icona)</Text>
-      <Button icon='alien' mode='text' labelStyle={{color:'white'}} style={styles.button}>Alien</Button>
-      <Button icon='alien' mode='outlined' labelStyle={{color:'white'}} style={styles.button}>ALIEN</Button>
-      <Button icon='alien' mode='contained' style={styles.button}>ALIEN</Button>
-      <Button icon='alien' mode='elevated' style={styles.button}>ALIEN</Button>
-      <Text>{'\n'}</Text>
-      <Text style={styles.sectionTitle}>Switch necesites un descans?</Text>
-      <Switch value={isSwitchOn} onValueChange={onToggleSwitch} color='red'></Switch>
-      <Text>{'\n'}</Text>
-      <Text style={styles.sectionTitle}>Botó dins d'un component Surface?</Text>
-      <Surface><Button icon='alien'>ALIEN</Button></Surface>
-      <Text>{'\n'}</Text>
-      <Text style={styles.sectionTitle}>Provant Chips</Text>
-      <View style={{flexDirection: 'row'}}>
-      <Chip icon='wifi' mode='outlined' compact>Wifi</Chip>
-      <Chip icon='wifi' mode='outlined' compact>Internet</Chip>
+    <View style={styles.contenidor}>
+      <View style={styles.seccio1}>
+        <Text>Secció 1</Text>
       </View>
-
-      <Text>{'\n'}</Text>
-      </ScrollView>
+      <View style={styles.seccio2}>
+        <Text>Secció 2</Text>
+      </View>
+      <View style={styles.seccio3}>
+        <Text>Secció 3</Text>
+      </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 0,
-    paddingHorizontal: 24,
-    backgroundColor: 'black'
+  contenidor: {
+    flex: 1,
+    flexDirection: 'column',
+    borderColor: 'purple',
+    borderWidth: 5,
   },
-  sectionTitle: {
-    fontSize: 25,
+  seccio1: {
+    flex: 1,
+    borderColor: 'red',
+    borderWidth: 3,
+    fontSize: 12,
     fontWeight: '600',
-    color : 'white'
+    margin: 4,
+    padding: 12,
+    textAlign: 'right',
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+  seccio2: {
+    flex: 1,
+    borderColor: 'green',
+    borderWidth: 3,
+    fontSize: 12,
+    fontWeight: '600',
+    margin: 4,
+    padding: 12,
+    textAlign: 'center',
   },
-  highlight: {
-    fontWeight: '700',
+  seccio3: {
+    flex: 1,
+    borderColor: 'blue',
+    borderWidth: 3,
+    fontSize: 12,
+    fontWeight: '600',
+    margin: 4,
+    padding: 12,
+    textAlign: 'left',
   },
-
-input: {
-  backgroundColor: 'white',
-},
-button: {
-  borderRadius: 5
-}
 });
 
 export default App;
